@@ -1,5 +1,5 @@
 import { title } from "process"
-import { Post } from "./Post"
+import { Post, PostList } from "./Post"
 
 export function AppComponent(){
     const post = "post"
@@ -35,10 +35,6 @@ export function AppComponent(){
     ]
     return (
         <div>
-            {/* <h1>Hello woda</h1>
-            <p>Hello wodiczka</p>
-            <img src="https://th.bing.com/th/id/OIP.JZOz6GGM0LNXxeaneIM0pwHaEo?rs=1&pid=ImgDetMain" alt="Photo wodiczki"></img> */}
-        
             <h1>{post}</h1>
             {postList.map((post) => {
                 return <Post
