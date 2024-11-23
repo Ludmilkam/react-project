@@ -1,5 +1,6 @@
 import { title } from "process"
-import { Post, PostList } from "./Post"
+import { Post } from "./Post"
+import { PostList } from "./PostList"
 
 export function AppComponent(){
     const post = "post"
