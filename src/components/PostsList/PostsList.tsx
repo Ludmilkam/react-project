@@ -1,7 +1,7 @@
-import { Post } from "./Post"
+import { Post } from "../Post/Post"
 
-export function PostList(){
-    const postList = [
+export function PostsList(){
+    const postsList = [
         {
             title: "post1",
             desription: "Wodiczka1",
@@ -32,8 +32,8 @@ export function PostList(){
         }
     ]        
     return(
-        <div>
-            {postList.map((post) => {
+        <div className="posts">
+            {postsList.map((post) => {
                 return <Post
                         title={post.title}
                         desription={post.desription}

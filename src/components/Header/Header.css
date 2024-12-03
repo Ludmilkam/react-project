@@ -1,0 +1,92 @@
+.header{
+    background-color: #F3EDDE;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    display:flex;
+    flex-direction: row;
+    border-radius: 16px;
+}
+
+.logo{
+    width: 111px;
+    height: 80px;
+}
+
+.allPosts{
+    background-color: transparent;
+    border: none;
+}
+.allPostsText{
+    display: flex;
+    color: #DDB093;
+    font-size: 20;
+    font-weight:bold; 
+}
+
+.recomendations{
+    background-color: transparent;
+    border: none;
+}
+.recomendationsText{
+    display: flex;
+    color: #DDB093;
+    font-size: 20;
+    font-weight:bold;
+}
+
+.searchBar{
+    width: 564px;
+    height: 47px;
+    border: none;
+    border-radius: 16px;
+    background-color: white;
+    color:white;
+    padding: 20px;
+}
+.searchBarSvg{
+    border: none;
+    position: absolute;
+    margin-left: -50px;
+    margin-top: 10px ;
+    background-color: white;
+}
+
+.yourPosts{
+    background-color: transparent;
+    border: none;
+}
+.yourPostsText{
+    display: flex;
+    color: #DDB093;
+    font-size: 20;
+    font-weight:bold;
+}
+
+.liked{
+    background-color: transparent;
+    border: none;
+}
+.likedText{
+    display: flex;
+    color: #DDB093;
+    font-size: 20;
+    font-weight:bold;
+}
+
+.yourProfil{
+    background-color: #EDB7B7;
+    border-radius: 10px;
+    border: none;
+    width: 99px;
+    height: 70px;
+    display: flex;
+    align-items: flex-start;
+}
+.yourProfilText{
+    color: #A8673B;
+    font-size: 20;
+    font-weight:bold;
+    display: flex;
+    align-items: flex-start;
+}

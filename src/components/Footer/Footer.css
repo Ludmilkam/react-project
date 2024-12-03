@@ -1,0 +1,28 @@
+.footer{
+    background-color: #3E1F04 ;
+    justify-content: start;
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    padding-left: 15px;
+    border-radius: 16px;
+}
+
+.text{
+  color: #A8673B;  
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text1{
+    margin-right: 15px;
+}
+.text2{
+    margin-right: 15px;
+}
+.text3{
+    margin-right: 15px;
+}

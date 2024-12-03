@@ -1,0 +1,35 @@
+.post{
+    display: flex;
+    background-color: #F3EDDE;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 579px;
+    height: 715px;
+    border: 2px solid #6A3B0E;
+    margin: 20px;
+    /* padding-top: 10px;
+    padding-left: 10px; */
+    flex-direction: column;
+    
+}
+
+.title{
+    font-size: 24px;
+}
+
+.author{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.description{
+    font-size: 20px;
+}
+
+.image{
+    width: 541px;
+    height: 204px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
