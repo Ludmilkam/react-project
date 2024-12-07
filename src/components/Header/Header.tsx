@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Header.css"
 
 export function Header(){
@@ -7,7 +8,9 @@ export function Header(){
                 <header className="header">
                     <img className = "logo" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" alt="" />
                     <button className="allPosts">
+                        <Link to="/posts">
                         <p className="allPostsText">All posts</p>
+                        </Link>
                     </button>
                     <button className="recomendations">
                         <p className="recomendationsText">Recomendations</p>

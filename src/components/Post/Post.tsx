@@ -1,11 +1,14 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import "./Post.css"
 
 interface IPostProps{
     title: string,
     desription: string,
     img: string,
-    author: string
+    author: string,
+    category: string,
+    id: number
 }
 
 export function Post(props: IPostProps){
@@ -36,7 +39,7 @@ export function Post(props: IPostProps){
                 <img className="image" src={props.img} alt={`${props.desription} photo's`} />
                 <h1 className="title">{props.title}</h1>
                 <p className="author">{props.author}</p>
-                <p className="description">Description:{props.desription}</p>
+                <p className="description">Description: {props.desription}</p>
                 <h2>Likes: {like}</h2>
                 {/* Относится к способу 1 */}
                 {/* <button onClick={notLiked}>
@@ -46,9 +49,10 @@ export function Post(props: IPostProps){
                 <button className="like" onClick={notLiked} disabled={disabled}>
                     Типо лайк
                 </button>
+                <p className="category">Category: {props.category}</p>
                 <h3>comments</h3>
+                <Link to={`/post/${props.id}`}><h5>Перейти к посту</h5></Link>
             </div>
-            
         </div>
     )
 }

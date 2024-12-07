@@ -4,6 +4,13 @@ import { Layout } from "./Layout/Layout"
 import { Main } from "./Main/Main"
 import { Footer } from './Footer/Footer'
 import { Header } from "./Header/Header"
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom"
+import { PostsList } from "./PostsList/PostsList"
+import { PostPage } from "./PostPage/PostPage"
 
 export function AppComponent(){
 
@@ -15,11 +22,19 @@ export function AppComponent(){
             desription="Wodiczka5"
             img=""
             author="author5"></Post> */}
-            <Layout>
+            {/* <Layout>
                 <Header></Header>
                 <Main></Main>
                 <Footer></Footer>
-            </Layout>
+            </Layout> */}
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout></Layout>}>
+                        <Route path="/posts" element={<PostsList></PostsList>}></Route>
+                        <Route path = "/post/:id" element = {<PostPage></PostPage>}> </Route>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
 
         </div>
     )

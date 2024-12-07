@@ -2,4 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+} 
+
+.category{
+    border: 2px solid #6A3B0E;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
 }

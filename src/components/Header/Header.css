@@ -16,12 +16,14 @@
 .allPosts{
     background-color: transparent;
     border: none;
+
 }
 .allPostsText{
     display: flex;
     color: #DDB093;
     font-size: 20;
     font-weight:bold; 
+
 }
 
 .recomendations{
@@ -41,7 +43,7 @@
     border: none;
     border-radius: 16px;
     background-color: white;
-    color:white;
+    color:rgb(0, 0, 0);
     padding: 20px;
 }
 .searchBarSvg{
