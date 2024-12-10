@@ -4,7 +4,7 @@ import { Post } from "../Post/Post"
 const postsList = [
     {
         title: "post1",
-        desription: "Wodiczka1",
+        description: "Wodiczka1",
         image:"" ,
         author:"author1",
         category:"default",
@@ -12,7 +12,7 @@ const postsList = [
     },
     {
         title: "post2",
-        desription: "Wodiczka2",
+        description: "Wodiczka2",
         image:"https://th.bing.com/th/id/OIP.JZOz6GGM0LNXxeaneIM0pwHaEo?rs=1&pid=ImgDetMain",
         author:"author2",
         category:"others",
@@ -20,7 +20,7 @@ const postsList = [
     },
     {
         title: "post3",
-        desription: "Wodiczka3",
+        description: "Wodiczka3",
         image:"https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" ,
         author:"author3",
         category:"scientific",
@@ -28,7 +28,7 @@ const postsList = [
     },
     {
         title: "post4",
-        desription: "Wodiczka4",
+        description: "Wodiczka4",
         image:"https://th.bing.com/th/id/OIP.s2uG2rGjCvWrdELvvOmZoQHaEo?rs=1&pid=ImgDetMain" ,
         author:"author4",
         category:"similar",
@@ -36,7 +36,7 @@ const postsList = [
     },
     {
         title: "post5",
-        desription: "Wodiczka5",
+        description: "Wodiczka5",
         image:"https://th.bing.com/th/id/OIP.s2uG2rGjCvWrdELvvOmZoQHaEo?rs=1&pid=ImgDetMain" ,
         author:"author5",
         category:"similar",
@@ -44,7 +44,7 @@ const postsList = [
     },
     {
         title: "post6",
-        desription: "Wodiczka6",
+        description: "Wodiczka6",
         image:"https://th.bing.com/th/id/OIP.JZOz6GGM0LNXxeaneIM0pwHaEo?rs=1&pid=ImgDetMain",
         author:"author6",
         category:"others",
@@ -55,6 +55,18 @@ const postsList = [
 export function PostsList(){
         const [selectedCategory, setSelectedCategory] = useState("all")
         const [filteredPosts, setFilteredPosts] = useState(postsList)
+
+        useEffect(() => {
+            async function fetchPosts() {
+                const response = await fetch("https://dev.to/api/articles")
+                const posts = await response.json()
+                setFilteredPosts(posts)
+                console.log(posts)
+    
+            }
+            fetchPosts()
+        }, [])
+
         useEffect(() => {
             console.log(selectedCategory)
             if (selectedCategory === "all") {
@@ -87,10 +99,10 @@ export function PostsList(){
             {filteredPosts.map((post) => {
                 return <Post
                         title={post.title}
-                        desription={post.desription}
-                        img={post.image}
+                        description={post.description}
+                        cover_image={post.image}
                         author={post.author}
-                        category={post.category}
+                        tag_list={post.category}
                         id={post.id}
                         key={post.id}></Post>
             })}

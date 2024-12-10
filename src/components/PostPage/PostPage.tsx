@@ -8,11 +8,11 @@ export function PostPage (){
     return (
         <div className="post">
             <img src="" alt="img" />
-            <h1 className="title">Title: {params.title}</h1>
+            <h1 className="title">Title: </h1>
             <p className="author">Author:</p>
             <p className="description">Description:</p>
             <h2>Likes: </h2>
-            <p className="category">Category: {params.category}</p>
+            <p className="category">Category: </p>
             <h6>{params.id}</h6>   
         </div>
         

@@ -6,7 +6,9 @@ export function Header(){
     return (
         <div>
                 <header className="header">
-                    <img className = "logo" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" alt="" />
+                    <Link to="/">
+                        <img className = "logo" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" alt="" />
+                    </Link>
                     <button className="allPosts">
                         <Link to="/posts">
                         <p className="allPostsText">All posts</p>
