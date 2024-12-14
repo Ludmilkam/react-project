@@ -104,7 +104,8 @@ export function PostsList(){
                         author={post.author}
                         tag_list={post.category}
                         id={post.id}
-                        key={post.id}></Post>
+                        key={post.id}
+                ></Post>
             })}
         </div>
     )

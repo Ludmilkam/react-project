@@ -31,7 +31,7 @@ export function AppComponent(){
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>
                         <Route path="/posts" element={<PostsList></PostsList>}></Route>
-                        <Route path = "/post/:id" element = {<PostPage></PostPage>}> </Route>
+                        <Route path = "/post/:postId" element = {<PostPage></PostPage>}> </Route>
                     </Route>
                 </Routes>
             </BrowserRouter>
