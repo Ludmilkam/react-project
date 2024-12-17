@@ -1,7 +1,7 @@
 // import { Post } from "./Post/Post"
 // import { PostsList } from "./PostsList/PostsList"
 import { Layout } from "./Layout/Layout"
-import { Main } from "./Main/Main"
+import { Main } from "../pages/MainPage/Main"
 import { Footer } from './Footer/Footer'
 import { Header } from "./Header/Header"
 import {
@@ -9,8 +9,8 @@ import {
     Routes,
     Route
 } from "react-router-dom"
-import { PostsList } from "./PostsList/PostsList"
-import { PostPage } from "./PostPage/PostPage"
+import { PostsList } from "../pages/PostsListPage/PostsList"
+import { PostPage } from "../pages/PostPage/PostPage"
 
 export function AppComponent(){
 

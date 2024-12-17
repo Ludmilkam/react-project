@@ -1,5 +1,5 @@
 import './Main.css'
-import { PostsList } from '../PostsList/PostsList'
+import { PostsList } from '../PostsListPage/PostsList'
 import { ReactNode } from 'react'
 
 interface IMainProps{

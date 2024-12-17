@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import "./Post.css"
+import "./PostCard.css"
 
 interface IPostProps{
     title: string,

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-import { Post } from "../Post/Post"
+import { Post } from "../../shared/PostCard/PostCard"
+import { usePosts } from "../../hooks/usePosts"
 
 const postsList = [
     {
@@ -53,31 +54,36 @@ const postsList = [
 ]  
 
 export function PostsList(){
+        const {posts} = usePosts() 
         const [selectedCategory, setSelectedCategory] = useState("all")
-        const [filteredPosts, setFilteredPosts] = useState(postsList)
+        const [filteredPosts, setFilteredPosts] = useState(posts)
 
-        useEffect(() => {
-            async function fetchPosts() {
-                const response = await fetch("https://dev.to/api/articles")
-                const posts = await response.json()
-                setFilteredPosts(posts)
-                console.log(posts)
+
+
+
+
+        // useEffect(() => {
+        //     async function fetchPosts() {
+        //         const response = await fetch("https://dev.to/api/articles")
+        //         const posts = await response.json()
+        //         setFilteredPosts(posts)
+        //         console.log(posts)
     
-            }
-            fetchPosts()
-        }, [])
+        //     }
+        //     fetchPosts()
+        // }, [])
 
         useEffect(() => {
             console.log(selectedCategory)
             if (selectedCategory === "all") {
-                setFilteredPosts(postsList)
+                setFilteredPosts(posts)
             } else {
-                const filtered = postsList.filter((post) => {
+                const filtered = posts.filter((post) => {
                     return post.category === selectedCategory
                 })
                 setFilteredPosts(filtered)
             }
-        }, [selectedCategory])
+        }, [selectedCategory, posts])
 
     return (
         <div className="posts">
@@ -100,7 +106,7 @@ export function PostsList(){
                 return <Post
                         title={post.title}
                         description={post.description}
-                        cover_image={post.image}
+                        cover_image={post.cover_image}
                         author={post.author}
                         tag_list={post.category}
                         id={post.id}
