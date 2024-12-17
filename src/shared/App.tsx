@@ -9,7 +9,7 @@ import {
     Routes,
     Route
 } from "react-router-dom"
-import { PostsList } from "../pages/PostsListPage/PostsList"
+import { PostsListPage } from "../pages/PostsListPage/PostsListPage" 
 import { PostPage } from "../pages/PostPage/PostPage"
 
 export function AppComponent(){
@@ -30,7 +30,7 @@ export function AppComponent(){
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>
-                        <Route path="/posts" element={<PostsList></PostsList>}></Route>
+                        <Route path="/posts" element={<PostsListPage></PostsListPage>}></Route>
                         <Route path = "/post/:postId" element = {<PostPage></PostPage>}> </Route>
                     </Route>
                 </Routes>
