@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Post } from "../../shared/PostCard/PostCard"
 import { usePosts } from "../../hooks/usePosts"
+import { useTitle } from '@vueuse/core'
 
 const postsList = [
     {
@@ -55,23 +56,10 @@ const postsList = [
 
 export function PostsList(){
         const {posts} = usePosts() 
+        const title = useTitle()
+        title.value = 'Post List' 
         const [selectedCategory, setSelectedCategory] = useState("all")
         const [filteredPosts, setFilteredPosts] = useState(posts)
-
-
-
-
-
-        // useEffect(() => {
-        //     async function fetchPosts() {
-        //         const response = await fetch("https://dev.to/api/articles")
-        //         const posts = await response.json()
-        //         setFilteredPosts(posts)
-        //         console.log(posts)
-    
-        //     }
-        //     fetchPosts()
-        // }, [])
 
         useEffect(() => {
             console.log(selectedCategory)

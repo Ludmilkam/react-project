@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTitle } from '@vueuse/core'
 
 export function PostPage() {
     const {postId} = useParams()
+    const title = useTitle()
+    title.value = 'Post Page' 
     const [post, setPost] = useState({
         title: '',
         cover_image: '',
