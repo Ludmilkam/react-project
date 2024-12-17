@@ -1,5 +1,5 @@
 import './Main.css'
-import { PostsList } from '../PostsListPage/PostsList'
+// import { PostsList } from '../PostsListPage/PostsList'
 import { ReactNode } from 'react'
 // import { useTitle } from '../../hooks/useTitle'
 import { useTitle } from '@vueuse/core'
