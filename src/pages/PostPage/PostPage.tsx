@@ -46,7 +46,6 @@ export function PostPage() {
                 <h2>Likes: </h2>
                 <p className="category">Category: {post.category}</p>
                 <h6>{postId}</h6>
-
             </div>
         </div>
     )

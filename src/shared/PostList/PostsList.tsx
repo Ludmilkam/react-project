@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Post } from "../../shared/PostList/PostCard/PostCard"
+import { Post } from "./PostCard/PostCard"
 import { usePosts } from "../../hooks/usePosts"
 import { useTitle } from '@vueuse/core'
 
