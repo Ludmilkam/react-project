@@ -30,9 +30,6 @@ export function Post(props: IPostProps){
 
         }
     }
-    // function liked(){
-    //         setDisabled(true)
-    // }
     return(
         <div>
             <div className="post">

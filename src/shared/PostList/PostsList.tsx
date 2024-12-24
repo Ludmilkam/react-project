@@ -3,57 +3,6 @@ import { Post } from "./PostCard/PostCard"
 import { usePosts } from "../../hooks/usePosts"
 import { useTitle } from '@vueuse/core'
 
-const postsList = [
-    {
-        title: "post1",
-        description: "Wodiczka1",
-        image:"" ,
-        author:"author1",
-        category:"default",
-        id: 0
-    },
-    {
-        title: "post2",
-        description: "Wodiczka2",
-        image:"https://th.bing.com/th/id/OIP.JZOz6GGM0LNXxeaneIM0pwHaEo?rs=1&pid=ImgDetMain",
-        author:"author2",
-        category:"others",
-        id: 1
-    },
-    {
-        title: "post3",
-        description: "Wodiczka3",
-        image:"https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" ,
-        author:"author3",
-        category:"scientific",
-        id: 2
-    },
-    {
-        title: "post4",
-        description: "Wodiczka4",
-        image:"https://th.bing.com/th/id/OIP.s2uG2rGjCvWrdELvvOmZoQHaEo?rs=1&pid=ImgDetMain" ,
-        author:"author4",
-        category:"similar",
-        id: 3
-    },
-    {
-        title: "post5",
-        description: "Wodiczka5",
-        image:"https://th.bing.com/th/id/OIP.s2uG2rGjCvWrdELvvOmZoQHaEo?rs=1&pid=ImgDetMain" ,
-        author:"author5",
-        category:"similar",
-        id: 4
-    },
-    {
-        title: "post6",
-        description: "Wodiczka6",
-        image:"https://th.bing.com/th/id/OIP.JZOz6GGM0LNXxeaneIM0pwHaEo?rs=1&pid=ImgDetMain",
-        author:"author6",
-        category:"others",
-        id: 5
-    }
-]  
-
 export function PostsList(){
         const {posts} = usePosts() 
         const title = useTitle()
@@ -67,7 +16,7 @@ export function PostsList(){
                 setFilteredPosts(posts)
             } else {
                 const filtered = posts.filter((post) => {
-                    return post.category === selectedCategory
+                    return post.tags === selectedCategory
                 })
                 setFilteredPosts(filtered)
             }
@@ -96,7 +45,7 @@ export function PostsList(){
                         description={post.description}
                         cover_image={post.cover_image}
                         author={post.author}
-                        tag_list={post.category}
+                        tag_list={post.tags}
                         id={post.id}
                         key={post.id}
                 ></Post>

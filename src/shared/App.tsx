@@ -16,17 +16,6 @@ export function AppComponent(){
 
     return (
         <div>
-            {/* <PostsList></PostsList>
-            <Post
-            title="Post5"
-            desription="Wodiczka5"
-            img=""
-            author="author5"></Post> */}
-            {/* <Layout>
-                <Header></Header>
-                <Main></Main>
-                <Footer></Footer>
-            </Layout> */}
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>

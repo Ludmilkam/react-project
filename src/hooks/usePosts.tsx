@@ -6,8 +6,7 @@ export interface IPost{
     description: string
     cover_image: string
     author: string
-    category: string
-
+    tags: string
 } 
 
 export function usePosts(){
@@ -15,10 +14,8 @@ export function usePosts(){
     useEffect(() => {
         async function fetchPosts() {
             const response = await fetch("https://dev.to/api/articles")
-            const posts = await response.json()
-            setPosts(posts)
-            console.log(posts)
-
+            const postsData = await response.json()
+            setPosts(postsData)
         }
         fetchPosts()
     }, [])
