@@ -1,9 +1,4 @@
-// import { Post } from "./Post/Post"
-// import { PostsList } from "./PostsList/PostsList"
 import { Layout } from "./Layout/Layout"
-import { Main } from "./Main/Main"
-import { Footer } from './Footer/Footer'
-import { Header } from "./Header/Header"
 import {
     BrowserRouter,
     Routes,
@@ -11,16 +6,17 @@ import {
 } from "react-router-dom"
 import { PostsListPage } from "../pages/PostsListPage/PostsListPage" 
 import { PostPage } from "../pages/PostPage/PostPage"
+import { NotFoundPage } from "../pages/NotFoundPage/NotFoundPage"
 
 export function AppComponent(){
-
     return (
         <div>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>
                         <Route path="/posts" element={<PostsListPage></PostsListPage>}></Route>
-                        <Route path = "/post/:postId" element = {<PostPage></PostPage>}> </Route>
+                        <Route path = "/post/:id" element = {<PostPage></PostPage>}></Route>
+                        <Route path="*" element = {<NotFoundPage></NotFoundPage>}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>
