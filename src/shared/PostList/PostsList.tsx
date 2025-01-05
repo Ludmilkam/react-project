@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { Post } from "./PostCard/PostCard";
 import { usePosts } from "../../hooks/usePosts";
-import { useTitle } from "@vueuse/core";
 import { TailSpin } from "react-loader-spinner";
 
 export function PostsList() {
-  const title = useTitle();
-  title.value = "Post List";
   const { posts, loading, error } = usePosts();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [filteredPosts, setFilteredPosts] = useState(posts);

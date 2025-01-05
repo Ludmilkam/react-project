@@ -1,14 +1,12 @@
 import { Navigate, useParams } from "react-router-dom";
-import { useTitle } from "@vueuse/core";
+
 import { usePostById } from "../../hooks/usePostById";
-// import { NotFoundPage } from "../NotFoundPage/NotFoundPage";
+import { useTitle } from "../../hooks/useTitle";
 
 export function PostPage() {
   const params = useParams();
-  const title = useTitle();
-  title.value = "Post Page";
+  useTitle("Post Page")
   const { post ,error} = usePostById(Number(params.id));
-
   if (error === "Post not found") {
     return <Navigate to="*" />;
   }
