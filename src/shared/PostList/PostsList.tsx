@@ -2,23 +2,27 @@ import { useState, useEffect } from "react";
 import { Post } from "./PostCard/PostCard";
 import { usePosts } from "../../hooks/usePosts";
 import { TailSpin } from "react-loader-spinner";
+import { useCategories } from "../../hooks/useCategories";
+
 
 export function PostsList() {
   const { posts, loading, error } = usePosts();
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredPosts, setFilteredPosts] = useState(posts);
+
 
   useEffect(() => {
     console.log(selectedCategory);
-    if (selectedCategory === "all") {
+    if (selectedCategory === "All") {
       setFilteredPosts(posts);
     } else {
       const filtered = posts.filter((post) => {
-        return post.tags === selectedCategory;
+        return post.tags.includes (selectedCategory);
       });
       setFilteredPosts(filtered);
     }
   }, [selectedCategory, posts]);
+  const { categories } = useCategories();
 
   return (
     <div className="posts">
@@ -32,11 +36,13 @@ export function PostsList() {
               setSelectedCategory(selectedValue);
             }}
           >
-            <option value="all">All</option>
-            <option value="similar">Similar</option>
-            <option value="default">Default</option>
-            <option value="scientific">Scientific</option>
-            <option value="others">Others</option>
+            <option className="option" value="All">All</option>
+            {categories.map((category) =>{
+              console.log(filteredPosts)
+              return(
+                <option className="option" key={category.id} value={category.name}>{category.name}</option>
+              )
+            })}
           </select>
         </h1>
       </div>
