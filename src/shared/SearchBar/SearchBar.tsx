@@ -112,9 +112,9 @@ export function SearchBar() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <p key={item.id} className="search-item-text">
+              <div key={item.id} className="search-item-text">
                 <Link to={`/post/${item.id}`}>{item.title}</Link>
-              </p>
+              </div>
             </div>
           ))}
         </div>
