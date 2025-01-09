@@ -40,22 +40,7 @@ a{
     font-weight:bold;
 }
 
-.searchBar{
-    width: 564px;
-    height: 47px;
-    border: none;
-    border-radius: 16px;
-    background-color: white;
-    color:rgb(0, 0, 0);
-    padding: 20px;
-}
-.searchBarSvg{
-    border: none;
-    position: absolute;
-    margin-left: -50px;
-    margin-top: 10px ;
-    background-color: white;
-}
+
 
 .yourPosts{
     background-color: transparent;
@@ -96,23 +81,3 @@ a{
     align-items: flex-start;
 }
 
-.searchBarModal {
-    position: absolute;
-    padding: 20px;
-    width: 564px;
-    background-color: rgb(228, 228, 228);
-    border-radius: 8px;
-    border-color: black;
-  }
-  .modal-overlay {
-    position: fixed;
-    top: 10%;
-    left: 7%;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    z-index: 999;
-  }
-  
