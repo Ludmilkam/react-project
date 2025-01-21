@@ -6,7 +6,7 @@ import { useTitle } from "../../hooks/useTitle";
 export function PostPage() {
   const params = useParams();
   useTitle("Post Page")
-  const { post ,error} = usePostById(Number(params.id));
+  const {post ,error} = usePostById(Number(params.id));
   if (error === "Post not found") {
     return <Navigate to="*" />;
   }

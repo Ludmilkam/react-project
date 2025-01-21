@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { IPost } from "./usePosts";
-import { Navigate } from "react-router-dom";
+
 
 
 export function usePostById(id: number | undefined){
