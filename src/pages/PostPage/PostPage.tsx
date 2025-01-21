@@ -1,7 +1,7 @@
 import { Navigate, useParams } from "react-router-dom";
-
 import { usePostById } from "../../hooks/usePostById";
 import { useTitle } from "../../hooks/useTitle";
+import { LikeButton } from "../../shared/LikeButton/LikeButton";
 
 export function PostPage() {
   const params = useParams();
@@ -17,7 +17,7 @@ export function PostPage() {
         <h1 className="title">Title: {post?.title}</h1>
         <p className="author">Author: {post?.author}</p>
         <p className="description">Description:{post?.description}</p>
-        <h2>Likes: </h2>
+        <LikeButton/>
         <p className="category">Tags: {post?.tags}</p>
         <h6>{params.id}</h6>
       </div>
