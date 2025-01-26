@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { likesContext } from "../App";
+import { usePostById } from "../../hooks/usePostById";
+import { useParams } from "react-router-dom";
 
 export function LikeButton() {
     const [like, setLike] = useState(0); //false
     const [disabled, setDisabled] = useState(false); //true
+    const {setLiked} = useContext(likesContext)
+    const params = useParams();
+    const { post } = usePostById(Number(params.id));
     // Типо способ 1
     // function notLiked() {
     //     if (like < 1 && like >= 0) {
@@ -16,6 +22,9 @@ export function LikeButton() {
         if (like < 1 && like >= 0) {
             setLike(like + 1);
             setDisabled(true);
+        }
+        if (post){
+            setLiked(post)
         }
     }
     return (
