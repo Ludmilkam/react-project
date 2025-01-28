@@ -12,12 +12,16 @@ import { IPost } from "../hooks/usePosts";
 
 interface ILikesContext{
     likedItems: IPost[],
-    setLiked: (post: IPost) => void
+    setLiked: (post: IPost) => void,
+    delLike: (id : number) =>void,
+    isLiked: (id: number) => boolean
 }
 
 const initialValue: ILikesContext = {
     likedItems: [],
-    setLiked: (post: IPost) => {}
+    setLiked: (post: IPost) => {},
+    delLike: (id : number) =>{},
+    isLiked: (id: number) => {return false}
 }
 export const likesContext = createContext<ILikesContext>(initialValue)
 
@@ -30,11 +34,17 @@ export function AppComponent(){
             post
         ]
         setLikedPosts(tempArray)
-        console.log(likedPosts)
+    }
+    function delLike(id: number){
+        const tempArray = likedPosts.filter(value =>value.id != id)
+        setLikedPosts(tempArray)
+    }
+    function isLiked(id : number){
+        return Boolean(likedPosts.find(post => post.id === id))
     }
     return (
         <div>
-            <likesContext.Provider value={{likedItems: likedPosts, setLiked: setLiked}}>
+            <likesContext.Provider value={{likedItems: likedPosts, setLiked: setLiked, delLike: delLike, isLiked: isLiked}}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout></Layout>}>
