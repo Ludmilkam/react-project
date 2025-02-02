@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "./PostCard.css"
-import { LikeButton } from "../../LikeButton/LikeButton" 
+// import { LikeButton } from "../../LikeButton/LikeButton" 
 
 interface IPostProps{
     title: string,
@@ -21,7 +21,7 @@ export function Post(props: IPostProps){
                 <h1 className="title">{props.title}</h1>
                 <p className="author">{props.author}</p>
                 <p className="description">Description: {props.description}</p>
-                <LikeButton/>
+                {/* <LikeButton/> */}
                 <p className="category">Category: {props.tag_list}</p>
                 <h3>comments</h3>
                 <Link to={`/post/${props.id}`}><h5>Перейти к посту</h5></Link>

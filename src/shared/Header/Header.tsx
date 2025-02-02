@@ -27,7 +27,9 @@ export function Header() {
           <p className="yourPostsText">Your posts</p>
         </button>
         <button className="liked">
+            <Link to="/liked">
           <p className="likedText">Liked</p>
+          </Link>
         </button>
         <button className="yourProfil">
           <p className="yourProfilText">Your Profil</p>

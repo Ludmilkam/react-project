@@ -3,7 +3,7 @@ import { usePostById } from "../../hooks/usePostById";
 import { useTitle } from "../../hooks/useTitle";
 import { LikeButton } from "../../shared/LikeButton/LikeButton";
 import { useContext } from "react";
-import { likesContext } from "../../shared/App";
+// import { likesContext } from "../../context/LikesContext"; 
 
 
 export function PostPage() {

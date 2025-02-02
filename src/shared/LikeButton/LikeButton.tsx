@@ -1,14 +1,20 @@
 import { useContext, useState } from "react";
-import { likesContext } from "../App";
+import { likesContext } from "../../context/LikesContext";
 import { usePostById } from "../../hooks/usePostById";
 import { useParams } from "react-router-dom";
-import "./LikeButton.css"
+import "./LikeButton.css";
+
+// interface ILikeButtonProps{
+//     post: {}
+// }
 
 export function LikeButton() {
-    const [isLike, setIsLike] = useState(false); 
+    // Из-за того что я убрала этот юз стейт я потратила сутки (ваших 15 мин) чтоб все починить
+    // const [isLike, setIsLike] = useState(false);
     // бедняжки мои идеи...
-    // const [disabled, setDisabled] = useState(false); 
-    const {setLiked, delLike} = useContext(likesContext)
+    // const [disabled, setDisabled] = useState(false);
+    // const {posts} = useContext(postsContext)
+    const { setLiked, delLike, isLiked } = useContext(likesContext);
     const params = useParams();
     const { post } = usePostById(Number(params.id));
 
@@ -35,16 +41,16 @@ export function LikeButton() {
     // }
     // 3 способ ибо прошлые ты забраковал
     // ну оно ж работает
-    function toggleLike(){
-        if (post && isLike) {
-            delLike(post.id); 
-        } else if (post) {
-            setLiked(post); 
-            
-        }
-        setIsLike(!isLike)
-    }
+    function toggleLike() {
+        if (post) {
+            if (isLiked(post.id)) {
+                delLike(post.id);
 
+            } else {
+                setLiked(post);
+            }
+        }
+    }
 
     return (
         // <div>
@@ -59,11 +65,13 @@ export function LikeButton() {
         //     </button>
         // </div>
         <div>
-            <h2>Likes: {isLike ? 1: 0} </h2>
-            <button className={`like ${!isLike ? "delLike": ""}`} onClick={toggleLike}>
+            <h2>Likes: {post && isLiked(post.id) ? 1 : 0}</h2>
+            <button
+                className={`like ${post && isLiked(post.id) ? "delLike" : ""}`}
+                onClick={toggleLike}
+            >
                 Типо лайк
             </button>
-
         </div>
     );
 }
