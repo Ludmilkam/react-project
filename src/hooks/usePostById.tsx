@@ -19,7 +19,7 @@ export function usePostById(id: number | undefined){
         async function fetchPost() {
             try{
                 setLoading(true)
-                const response = await fetch(`https://dev.to/api/articles/${id}`)
+                const response = await fetch(`https://localhost:8000/api/post/${id}`)
                 if (response.status === 404) {
                     throw new Error("Post not found");
                 }

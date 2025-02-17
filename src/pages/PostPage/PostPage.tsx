@@ -21,12 +21,12 @@ export function PostPage() {
     return (
         <div>
             <div className="post">
-                <img className="image" src={post?.cover_image} alt="img" />
-                <h1 className="title">Title: {post?.title}</h1>
+                {/* <img className="image" src={post?.cover_image} alt="img" /> */}
+                <h1 className="title">Title: {post?.name}</h1>
                 <p className="author">Author: {post?.author}</p>
                 <p className="description">Description:{post?.description}</p>
                 <LikeButton />
-                <p className="category">Tags: {post?.tags}</p>
+                {/* <p className="category">Tags: {post?.tags}</p> */}
                 <h6>{params.id}</h6>
             </div>
         </div>

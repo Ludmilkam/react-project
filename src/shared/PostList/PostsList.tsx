@@ -11,18 +11,18 @@ export function PostsList() {
   const [filteredPosts, setFilteredPosts] = useState(posts);
 
 
-  useEffect(() => {
-    console.log(selectedCategory);
-    if (selectedCategory === "All") {
-      setFilteredPosts(posts);
-    } else {
-      const filtered = posts.filter((post) => {
-        return post.tags.includes (selectedCategory);
-      });
-      setFilteredPosts(filtered);
-    }
-  }, [selectedCategory, posts]);
-  const { categories } = useCategories();
+//   useEffect(() => {
+//     console.log(selectedCategory);
+//     if (selectedCategory === "All") {
+//       setFilteredPosts(posts);
+//     } else {
+//       const filtered = posts.filter((post) => {
+//         return post.tags.includes (selectedCategory);
+//       });
+//       setFilteredPosts(filtered);
+//     }
+//   }, [selectedCategory, posts]);
+//   const { categories } = useCategories();
 
   return (
     <div className="posts">
@@ -37,12 +37,12 @@ export function PostsList() {
             }}
           >
             <option className="option" value="All">All</option>
-            {categories.map((category) =>{
+            {/* {categories.map((category) =>{
               console.log(filteredPosts)
               return(
                 <option className="option" key={category.id} value={category.name}>{category.name}</option>
               )
-            })}
+            })} */}
           </select>
         </h1>
       </div>
@@ -67,11 +67,11 @@ export function PostsList() {
           {filteredPosts.map((post) => {
             return (
               <Post
-                title={post.title}
+                name={post.name}
                 description={post.description}
-                cover_image={post.cover_image}
+                // cover_image={post.cover_image}
                 author={post.author}
-                tag_list={post.tags}
+                // tag_list={post.tags}
                 id={post.id}
                 key={post.id}
               ></Post>

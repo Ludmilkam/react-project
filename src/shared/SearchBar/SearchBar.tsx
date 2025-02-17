@@ -27,7 +27,7 @@ export function SearchBar() {
       return;
     } else {
       const filtered = posts.filter((item) => {
-        return item.title.toLowerCase().includes(entered.toLowerCase());
+        return item.name.toLowerCase().includes(entered.toLowerCase());
       });
       setFilteredItems(filtered);
     }
@@ -113,7 +113,7 @@ export function SearchBar() {
                 />
               </svg>
               <div key={item.id} className="search-item-text">
-                <Link to={`/post/${item.id}`}>{item.title}</Link>
+                <Link to={`/post/${item.id}`}>{item.name}</Link>
               </div>
             </div>
           ))}

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 
 export interface IPost{
     id: number
-    title: string,
+    name: string,
     description: string
-    cover_image: string
+    // cover_image: string
+    time_publicated: number
     author: string
-    tags: string
+    comments: []
+    // tags: string
 } 
 
 export function usePosts(){
@@ -16,9 +18,13 @@ export function usePosts(){
     useEffect(() => {
         async function fetchPosts() {
             try{
-                const response = await fetch("https://dev.to/api/articles")
-                const postsData = await response.json()
-                setPosts(postsData)
+                const response = await fetch("https://localhost:8000/api/post/all")
+                const result = await response.json()
+                if (result.status === 'error') {
+                    setError(result.message)
+                } else {
+                    setPosts(result.data)
+                }
             }catch(error){
                 if (error instanceof Error){
                     setError(error.message)
