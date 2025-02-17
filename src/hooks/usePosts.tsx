@@ -18,7 +18,7 @@ export function usePosts(){
     useEffect(() => {
         async function fetchPosts() {
             try{
-                const response = await fetch("https://localhost:8000/api/post/all")
+                const response = await fetch("http://localhost:8000/api/post/all")
                 const result = await response.json()
                 if (result.status === 'error') {
                     setError(result.message)
