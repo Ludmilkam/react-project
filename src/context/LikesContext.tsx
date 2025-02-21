@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { IPost } from "../hooks/usePosts";
+import { IPost } from "../types/interfaces"; 
 
 interface ILikesContext {
     likedItems: IPost[];
@@ -30,7 +30,7 @@ export function useLikesContext() {
 export function LikesContextProvider(props: ILikesContextProviderProps) {
     const { children } = props;
     const [likedPosts, setLikedPosts] = useState<IPost[]>([]);
-    const [posts, setPosts] = useState<IPost[]>();
+    // const [posts, setPosts] = useState<IPost[]>();
     function setLiked(post: IPost) {
         const tempArray = [...likedPosts, post];
         setLikedPosts(tempArray);

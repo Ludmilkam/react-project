@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
+import { IPost } from "../types/interfaces";
 
-export interface IPost{
-    id: number
-    name: string,
-    description: string
-    // cover_image: string
-    time_publicated: number
-    author: string
-    comments: []
-    // tags: string
-} 
+
 
 export function usePosts(){
     const [posts, setPosts] = useState<IPost[]>([])
@@ -37,3 +29,5 @@ export function usePosts(){
     }, [])
     return {posts: posts, loading: loading, error: error}
 }
+
+

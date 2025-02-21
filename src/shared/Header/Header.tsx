@@ -31,9 +31,11 @@ export function Header() {
           <p className="likedText">Liked</p>
           </Link>
         </button>
+        <Link to="/login">
         <button className="yourProfil">
           <p className="yourProfilText">Your Profil</p>
         </button>
+        </Link>
       </header>
     </div>
   );

@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { IPost, usePosts } from "../../hooks/usePosts";
-import Modal from "react-modal";
+import { usePosts } from "../../hooks/usePosts";
+// import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import "./SearchBar.css";
+import { IPost } from "../../types/interfaces";
 
 export function SearchBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);

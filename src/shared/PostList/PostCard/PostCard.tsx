@@ -8,7 +8,7 @@ interface IPostProps{
     description: string,
     // cover_image: string,
     author: string,
-    // tag_list: string,
+    tag_list: string,
     id: number
 }
 
@@ -22,7 +22,7 @@ export function Post(props: IPostProps){
                 <p className="author">{props.author}</p>
                 <p className="description">Description: {props.description}</p>
                 {/* <LikeButton/> */}
-                {/* <p className="category">Category: {props.tag_list}</p> */}
+                <p className="category">Category: {props.tag_list}</p>
                 <h3>comments</h3>
                 <Link to={`/post/${props.id}`}><h5>Перейти к посту</h5></Link>
             </div>
