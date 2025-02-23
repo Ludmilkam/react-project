@@ -21,7 +21,9 @@ export interface IPost {
     time_publicated: number;
     author: string;
     comments: [];
-    tag: string;
+    tag: {id: number;
+        name: string;
+    };
 }
 
 export interface ICategory {

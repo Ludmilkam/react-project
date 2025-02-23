@@ -16,7 +16,7 @@ export function PostsList() {
             setFilteredPosts(posts);
         } else {
             const filtered = posts.filter((post) => {
-                return post.tag === selectedCategory;
+                return post.tag.name === selectedCategory;
                 
             });
             console.log(posts)
@@ -83,7 +83,7 @@ export function PostsList() {
                                 description={post.description}
                                 // cover_image={post.cover_image}
                                 author={post.author}
-                                tag_list={post.tag}
+                                tag_list={post.tag.name}
                                 id={post.id}
                                 key={post.id}
                             ></Post>
