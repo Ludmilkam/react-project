@@ -18,6 +18,7 @@ export function LoginPage() {
                 <label>
                     Email:
                     <input
+                    className="login-input"
                         type="email"
                         {...register("email", {required: {value: true, message: "Field is required"}, 
                             minLength: {value: 7, message: "Length should be > 7"}, 
@@ -30,6 +31,7 @@ export function LoginPage() {
                 <label>
                     Password:
                     <input
+                        className="login-input"
                         type="password"
                         {...register("password", {
                             required: {value: true,message: "Field is required"},minLength: {value: 10,message: "Length should be > 10"},

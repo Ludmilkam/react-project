@@ -18,6 +18,7 @@ export function RegisterPage() {
                 <label>
                     Email:
                     <input
+                    className="register-input"
                         type="email"
                         {...register("email", {
                             required: {
@@ -39,6 +40,7 @@ export function RegisterPage() {
                 <label>
                     Username:
                     <input
+                    className="register-input"
                         type="email"
                         {...register("username", {
                             required: {
@@ -60,6 +62,7 @@ export function RegisterPage() {
                 <label>
                     Password:
                     <input
+                    className="register-input"
                         type="password"
                         {...register("password", {
                             required: {
