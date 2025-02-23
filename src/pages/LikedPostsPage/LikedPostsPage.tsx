@@ -20,7 +20,7 @@ export function LikedPostsPage() {
                         Description:{likedItem.description}
                     </p>
                     <LikeButton />
-                    {/* <p className="category">Tags: {likedItem.tags}</p> */}
+                    {/* <p className="category">tag: {likedItem.tag}</p> */}
                     <h6>{params.id}</h6>
                 </div>
                 )

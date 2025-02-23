@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
-import { ICategories } from "../types/interfaces"
+import { ICategory } from "../types/interfaces"
 
 
 
 export function useCategories(){
-    const [categories, setCategories] = useState<ICategories[]>([])
+    const [categories, setCategories] = useState<ICategory[]>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
@@ -14,10 +14,10 @@ export function useCategories(){
                 setLoading(true)
                 const response = await fetch("http://127.0.0.1:8000/api/tag/all")
                 const result = await response.json()
-                if (result.status === "error"){
-                    setError(result.message)
-                } else {
+                if (result.status === "ok"){
                     setCategories(result.data)
+                } else {
+                    setError(result.message)
                 }
             } catch(error){
                 if (error instanceof Error) {

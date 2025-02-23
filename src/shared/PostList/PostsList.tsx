@@ -16,8 +16,10 @@ export function PostsList() {
             setFilteredPosts(posts);
         } else {
             const filtered = posts.filter((post) => {
-                return post.tags.includes(selectedCategory);
+                return post.tag === selectedCategory;
+                
             });
+            console.log(posts)
             setFilteredPosts(filtered);
         }
     }, [selectedCategory, posts]);
@@ -81,7 +83,7 @@ export function PostsList() {
                                 description={post.description}
                                 // cover_image={post.cover_image}
                                 author={post.author}
-                                tag_list={post.tags}
+                                tag_list={post.tag}
                                 id={post.id}
                                 key={post.id}
                             ></Post>

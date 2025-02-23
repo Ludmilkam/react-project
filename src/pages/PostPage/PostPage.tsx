@@ -28,7 +28,7 @@ export function PostPage() {
                 <p className="author">Author: {post?.author}</p>
                 <p className="description">Description: {post?.description}</p>
                 <LikeButton />
-                {/* <p className="category">Tags: {post?.tags}</p> */}
+                {/* <p className="category">tag: {post?.tag}</p> */}
                 <h6>{params.id}</h6>
             </div>
         </div>

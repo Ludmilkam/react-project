@@ -1,18 +1,21 @@
 import { useForm } from "react-hook-form";
 import { IRegister } from "../../types/interfaces";
+import "./RegisterPage.css"
+import { Link } from "react-router-dom";
 
 
 
-const { register, handleSubmit, formState, clearErrors } = useForm<IRegister>({
-    mode: "onSubmit",
-});
 
-const onSubmit = (data: IRegister) => {
-    console.log(data);
-};
 export function RegisterPage(){
+    const { register, handleSubmit, formState, clearErrors } = useForm<IRegister>({
+        mode: "onSubmit",
+    });
+    
+    const onSubmit = (data: IRegister) => {
+        console.log(data);
+    };
     return(
-        <div><form onSubmit={handleSubmit(onSubmit)}>
+        <div><form onSubmit={handleSubmit(onSubmit)} className="form">
         <label>
             Email:
             <input
@@ -66,7 +69,8 @@ export function RegisterPage(){
                     },
                 })}/>
         </label>
-        <button type="submit">Submit</button>
+        <label><button type="submit" className="btn-register">Submit</button></label>
+        <Link to="/login"><label>login</label></Link>
     </form></div>
     )
 }

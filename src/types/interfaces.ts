@@ -21,10 +21,10 @@ export interface IPost {
     time_publicated: number;
     author: string;
     comments: [];
-    tags: string;
+    tag: string;
 }
 
-export interface ICategories {
+export interface ICategory {
     id: number;
     name: string;
 }
