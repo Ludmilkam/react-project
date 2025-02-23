@@ -37,6 +37,27 @@ export function RegisterPage() {
                     <p>{formState.errors.email?.message}</p>
                 </label>
                 <label>
+                    Username:
+                    <input
+                        type="email"
+                        {...register("username", {
+                            required: {
+                                value: true,
+                                message: "Field is required",
+                            },
+                            minLength: {
+                                value: 7,
+                                message: "Length should be > 7",
+                            },
+                            maxLength: {
+                                value: 50,
+                                message: "Length should be < 50",
+                            },
+                        })}
+                    />
+                    <p>{formState.errors.email?.message}</p>
+                </label>
+                <label>
                     Password:
                     <input
                         type="password"
@@ -56,7 +77,8 @@ export function RegisterPage() {
                         })}
                     />
                 </label>
-                <label>
+                <p>{formState.errors.email?.message}</p>
+                {/* <label>
                     Description:
                     <textarea
                         {...register("description", {
@@ -66,7 +88,7 @@ export function RegisterPage() {
                             },
                         })}
                     />
-                </label>
+                </label> */}
                 <label>
                     <button type="submit" className="btn-register">
                         Submit

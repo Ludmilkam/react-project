@@ -23,9 +23,7 @@ export function LoginPage() {
                             minLength: {value: 7, message: "Length should be > 7"}, 
                             maxLength: {value: 50,message: "Length should be < 50"},
                         })}
-                        onFocus={() => {
-                            clearErrors("email");
-                        }}
+                    
                     />
                     <p>{formState.errors.email?.message}</p>
                 </label>
@@ -39,6 +37,7 @@ export function LoginPage() {
                         })}
                     />
                 </label>
+                <p>{formState.errors.email?.message}</p>
                 <label><button type="submit" className="btn-login">Submit</button></label>
                 <Link to="/register"><label>register</label></Link>
 
