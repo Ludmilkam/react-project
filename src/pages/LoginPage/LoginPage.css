@@ -4,6 +4,7 @@
     width: 30%;
     height: 30%;
     gap: 20px;
+    /* margin процентами не делаем */
     margin-left: 40%;
     margin-top: 2%;
     padding: 10px;

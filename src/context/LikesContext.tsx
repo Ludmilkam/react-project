@@ -20,7 +20,7 @@ const initialValue: ILikesContext = {
         return false;
     },
 };
-
+// не надо export
 export const likesContext = createContext<ILikesContext>(initialValue);
 
 export function useLikesContext() {

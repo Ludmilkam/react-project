@@ -21,6 +21,7 @@ export function usePostById(id: number | undefined) {
                     `http://127.0.0.1:8000/api/post/${id}`
                 );
                 if (response.status === 404) {
+                    // setError
                     throw new Error("Post not found");
                 }
                 const result = await response.json();

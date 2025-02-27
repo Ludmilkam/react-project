@@ -21,6 +21,7 @@ export interface IPost {
     time_publicated: number;
     author: string;
     comments: [];
+    // использовать ICategory
     tag: {id: number;
         name: string;
     };
@@ -30,7 +31,7 @@ export interface ICategory {
     id: number;
     name: string;
 }
-
+// лучше дописать ILoginForm
 export interface ILogin {
     email: string;
     password: string;

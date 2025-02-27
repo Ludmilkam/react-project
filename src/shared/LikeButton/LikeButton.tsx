@@ -1,4 +1,6 @@
+// не надо
 import { useContext, useState } from "react";
+// поменять
 import { likesContext } from "../../context/LikesContext";
 import { usePostById } from "../../hooks/usePostById";
 import { useParams } from "react-router-dom";
@@ -14,7 +16,10 @@ export function LikeButton() {
     // бедняжки мои идеи...
     // const [disabled, setDisabled] = useState(false);
     // const {posts} = useContext(postsContext)
+
+    // useContext не используем есть хук useLikesContext
     const { setLiked, delLike, isLiked } = useContext(likesContext);
+
     const params = useParams();
     const { post } = usePostById(Number(params.id));
 

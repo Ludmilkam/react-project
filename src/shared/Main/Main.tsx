@@ -6,6 +6,7 @@ interface IMainProps{
 }
 
 export function Main(props: IMainProps) {
+    // useTitle
     return (
         <div className='container'>
             {props.children}

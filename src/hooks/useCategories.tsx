@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { ICategory } from "../types/interfaces"
 
-
+// categories -> tag
 
 export function useCategories(){
     const [categories, setCategories] = useState<ICategory[]>([])

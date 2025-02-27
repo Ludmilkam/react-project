@@ -7,6 +7,7 @@ export function Footer( ){
                 <div>
                     <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Water_molecule.svg" alt="" />
                 </div>
+                {/* className делаем корректные */}
                 <div className="text">
                     <h5 className="text1">wodiczka`s contact</h5>
                     <h5 className="text2">help</h5>

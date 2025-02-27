@@ -1,3 +1,4 @@
+// не используешь
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "./PostCard.css"
@@ -8,6 +9,7 @@ interface IPostProps{
     description: string,
     // cover_image: string,
     author: string,
+    // camelCase
     tag_list: string,
     id: number
 }

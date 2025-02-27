@@ -19,6 +19,7 @@ export function PostsList() {
                 return post.tag.name === selectedCategory;
                 
             });
+            // не надо
             console.log(posts)
             setFilteredPosts(filtered);
         }
@@ -44,6 +45,7 @@ export function PostsList() {
                             All
                         </option>
                         {categories.map((category) => {
+                            // не надо
                             console.log(filteredPosts);
                             return (
                                 <option

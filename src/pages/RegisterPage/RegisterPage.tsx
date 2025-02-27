@@ -4,6 +4,7 @@ import "./RegisterPage.css";
 import { Link } from "react-router-dom";
 
 export function RegisterPage() {
+    // 
     const { register, handleSubmit, formState, clearErrors } =
         useForm<IRegister>({
             mode: "onSubmit",
@@ -92,6 +93,7 @@ export function RegisterPage() {
                         })}
                     />
                 </label> */}
+                {/* label не надо */}
                 <label>
                     <button type="submit" className="btn-register">
                         Submit

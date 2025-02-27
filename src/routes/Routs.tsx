@@ -25,15 +25,15 @@ export function AppRoutes() {
                         element={<NotFoundPage/>}
                     ></Route>
                     <Route
-                    path="/liked"
-                    element={<LikedPostsPage/>}></Route>
+                        path="/liked"
+                        element={<LikedPostsPage/>}></Route>
                     <Route
-                    path="/login"
-                    element={<LoginPage/>}
+                        path="/login"
+                        element={<LoginPage/>}
                     ></Route>
                     <Route
-                    path="/register"
-                    element={<RegisterPage/>}
+                        path="/register"
+                        element={<RegisterPage/>}
                     ></Route>
                 </Route>
             </Routes>

@@ -2,6 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { usePostById } from "../../hooks/usePostById";
 import { useTitle } from "../../hooks/useTitle";
 import { LikeButton } from "../../shared/LikeButton/LikeButton";
+// не испоьзуешь
 import { useContext, useEffect } from "react";
 // import { likesContext } from "../../context/LikesContext"; 
 
@@ -13,6 +14,7 @@ export function PostPage() {
     // const {setLiked} = useContext(likesContext)
 
     if (error === "Post not found") {
+        // вместо Navigate лучше использовать хук useNavigate и его функцию navigate
         return <Navigate to="*" />;
     }
     // if (post){

@@ -6,6 +6,7 @@ import { LikeButton } from "../../shared/LikeButton/LikeButton";
 export function LikedPostsPage() {
     const params = useParams();
     useTitle("Liked Posts Page");
+    // не используешь delLike
     const { likedItems, delLike } = useLikesContext();
 
     return (
@@ -21,6 +22,7 @@ export function LikedPostsPage() {
                     </p>
                     <LikeButton />
                     {/* <p className="category">tag: {likedItem.tag}</p> */}
+                    {/* зачем? */}
                     <h6>{params.id}</h6>
                 </div>
                 )

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 export function LoginPage() {
+    // не используешь clearErrors
     const { register, handleSubmit, formState, clearErrors } = useForm<ILogin>({
         mode: "onSubmit",
     });
@@ -14,6 +15,7 @@ export function LoginPage() {
     };
     return (
         <div>
+            {/* поменять form */}
             <form onSubmit={handleSubmit(onSubmit)} className="form">
                 <label>
                     Email:
@@ -26,6 +28,7 @@ export function LoginPage() {
                         })}
                     
                     />
+                    {/* p из label лучше убрать */}
                     <p>{formState.errors.email?.message}</p>
                 </label>
                 <label>
@@ -40,7 +43,9 @@ export function LoginPage() {
                     />
                 </label>
                 <p>{formState.errors.email?.message}</p>
+                {/* label не надо */}
                 <label><button type="submit" className="btn-login">Submit</button></label>
+                {/* label не надо */}
                 <Link to="/register"><label>register</label></Link>
 
             </form>
