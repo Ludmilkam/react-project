@@ -6,7 +6,7 @@ import { LikeButton } from "../../shared/LikeButton/LikeButton";
 export function LikedPostsPage() {
     const params = useParams();
     useTitle("Liked Posts Page");
-    const { likedItems, delLike } = useLikesContext();
+    const { likedItems } = useLikesContext();
 
     return (
         <div>
@@ -19,8 +19,8 @@ export function LikedPostsPage() {
                     <p className="description">
                         Description:{likedItem.description}
                     </p>
-                    <LikeButton />
-                    {/* <p className="category">tag: {likedItem.tag}</p> */}
+                    <LikeButton post={likedItem} />
+                    <p className="category">tag: {likedItem.tag.name}</p>
                     <h6>{params.id}</h6>
                 </div>
                 )

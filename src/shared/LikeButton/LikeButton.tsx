@@ -1,22 +1,24 @@
 import { useContext, useState } from "react";
-import { likesContext } from "../../context/LikesContext";
+import { useLikesContext } from "../../context/LikesContext";
 import { usePostById } from "../../hooks/usePostById";
 import { useParams } from "react-router-dom";
 import "./LikeButton.css";
+import { IPost } from "../../types/interfaces";
 
-// interface ILikeButtonProps{
-//     post: {}
-// }
+interface ILikeButtonProps{
+    post: IPost
+}
 
-export function LikeButton() {
+export function LikeButton(props: ILikeButtonProps) {
     // Из-за того что я убрала этот юз стейт я потратила сутки (ваших 15 мин) чтоб все починить
     // const [isLike, setIsLike] = useState(false);
     // бедняжки мои идеи...
     // const [disabled, setDisabled] = useState(false);
     // const {posts} = useContext(postsContext)
-    const { setLiked, delLike, isLiked } = useContext(likesContext);
-    const params = useParams();
-    const { post } = usePostById(Number(params.id));
+    const { setLiked, delLike, isLiked } = useLikesContext();
+    const {post} = props
+    // const params = useParams();
+    // const { post } = usePostById(Number(params.id));
 
     // И чем вам мои способы не нравятся🙄
     // опять все переделывать

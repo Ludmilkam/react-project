@@ -11,30 +11,13 @@ export function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Layout/>}>
-                    <Route
-                        path="/posts"
-                        element={<PostsListPage/>}
-                    ></Route>
-                    <Route
-                        path="/post/:id"
-                        element={<PostPage/>}
-                    ></Route>
-                    <Route
-                        path="*"
-                        element={<NotFoundPage/>}
-                    ></Route>
-                    <Route
-                    path="/liked"
-                    element={<LikedPostsPage/>}></Route>
-                    <Route
-                    path="/login"
-                    element={<LoginPage/>}
-                    ></Route>
-                    <Route
-                    path="/register"
-                    element={<RegisterPage/>}
-                    ></Route>
+                <Route path="/" element={<Layout />}>
+                    <Route path="/posts" element={<PostsListPage />}></Route>
+                    <Route path="/post/:id" element={<PostPage />}></Route>
+                    <Route path="*" element={<NotFoundPage />}></Route>
+                    <Route path="/liked" element={<LikedPostsPage />}></Route>
+                    <Route path="/login" element={<LoginPage />}></Route>
+                    <Route path="/register" element={<RegisterPage />}></Route>
                 </Route>
             </Routes>
         </BrowserRouter>

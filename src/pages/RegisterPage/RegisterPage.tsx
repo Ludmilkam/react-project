@@ -1,24 +1,26 @@
 import { useForm } from "react-hook-form";
-import { IRegister } from "../../types/interfaces";
+import { IRegisterForm } from "../../types/interfaces";
 import "./RegisterPage.css";
 import { Link } from "react-router-dom";
+import { useTitle } from "../../hooks/useTitle";
 
 export function RegisterPage() {
-    const { register, handleSubmit, formState, clearErrors } =
-        useForm<IRegister>({
+    useTitle("Register Page")
+    const { register, handleSubmit, formState} =
+        useForm<IRegisterForm>({
             mode: "onSubmit",
         });
 
-    const onSubmit = (data: IRegister) => {
+    const onSubmit = (data: IRegisterForm) => {
         console.log(data);
     };
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="form">
+            <form onSubmit={handleSubmit(onSubmit)} className="reg-form">
                 <label>
                     Email:
                     <input
-                    className="register-input"
+                        className="register-input"
                         type="email"
                         {...register("email", {
                             required: {
@@ -35,12 +37,12 @@ export function RegisterPage() {
                             },
                         })}
                     />
-                    <p>{formState.errors.email?.message}</p>
                 </label>
+                <p>{formState.errors.email?.message}</p>
                 <label>
                     Username:
                     <input
-                    className="register-input"
+                        className="register-input"
                         type="email"
                         {...register("username", {
                             required: {
@@ -57,12 +59,12 @@ export function RegisterPage() {
                             },
                         })}
                     />
-                    <p>{formState.errors.email?.message}</p>
                 </label>
+                <p>{formState.errors.email?.message}</p>
                 <label>
                     Password:
                     <input
-                    className="register-input"
+                        className="register-input"
                         type="password"
                         {...register("password", {
                             required: {
@@ -81,22 +83,9 @@ export function RegisterPage() {
                     />
                 </label>
                 <p>{formState.errors.email?.message}</p>
-                {/* <label>
-                    Description:
-                    <textarea
-                        {...register("description", {
-                            maxLength: {
-                                value: 1000,
-                                message: "Length should be < 1000",
-                            },
-                        })}
-                    />
-                </label> */}
-                <label>
                     <button type="submit" className="btn-register">
                         Submit
                     </button>
-                </label>
                 <Link to="/login">
                     <label>login</label>
                 </Link>

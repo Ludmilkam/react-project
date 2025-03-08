@@ -20,16 +20,18 @@ export function usePostById(id: number | undefined) {
                 const response = await fetch(
                     `http://127.0.0.1:8000/api/post/${id}`
                 );
-                if (response.status === 404) {
-                    throw new Error("Post not found");
-                }
                 const result = await response.json();
+                if (response.status === 404) {
+                    // throw new Error("Post not found");
+                    setError(result.message);
+                }
+
                 if (result.status === "ok") {
                     setPost(result.data);
                 } else {
                     setError(result.message);
                 }
-                console.log(id);
+
             } catch (error) {
                 console.log(error);
                 if (error instanceof Error) {

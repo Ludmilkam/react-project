@@ -2,56 +2,50 @@ import { useState, useEffect } from "react";
 import { Post } from "./PostCard/PostCard";
 import { usePosts } from "../../hooks/usePosts";
 import { TailSpin } from "react-loader-spinner";
-import { useCategories } from "../../hooks/useCategories";
+import { useTags } from "../../hooks/useTags"; 
 
 export function PostsList() {
     const { posts, loading, error } = usePosts();
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedTag, setSelectedTag] = useState("All");
     const [filteredPosts, setFilteredPosts] = useState(posts);
-    const { categories } = useCategories();
+    const { tags } = useTags();
 
     useEffect(() => {
-        console.log(selectedCategory);
-        if (selectedCategory === "All") {
+        if (selectedTag === "All") {
             setFilteredPosts(posts);
         } else {
             const filtered = posts.filter((post) => {
-                return post.tag.name === selectedCategory;
+                return post.tag.name === selectedTag;
                 
             });
             console.log(posts)
             setFilteredPosts(filtered);
         }
-    }, [selectedCategory, posts]);
-
-    // useEffect(()=>{
-    //     setFilteredPosts(posts)
-    // }, [posts])
+    }, [selectedTag, posts]);
 
     return (
         <div className="posts">
             <div>
                 <h1 className="categoryText">
-                    Category:{" "}
+                    Tag:{" "}
                     <select
                         className="category"
                         onChange={(event) => {
                             const selectedValue = event.target.value;
-                            setSelectedCategory(selectedValue);
+                            setSelectedTag(selectedValue);
                         }}
                     >
                         <option className="option" value="All">
                             All
                         </option>
-                        {categories.map((category) => {
-                            console.log(filteredPosts);
+                        {tags.map((tag) => {
                             return (
                                 <option
                                     className="option"
-                                    key={category.id}
-                                    value={category.name}
+                                    key={tag.id}
+                                    value={tag.name}
                                 >
-                                    {category.name}
+                                    {tag.name}
                                 </option>
                             );
                         })}
@@ -83,10 +77,11 @@ export function PostsList() {
                                 description={post.description}
                                 // cover_image={post.cover_image}
                                 author={post.author}
-                                tag_list={post.tag.name}
+                                tagList={post.tag.name}
                                 id={post.id}
                                 key={post.id}
                             ></Post>
+                    
                         );
                     })}
                 </div>

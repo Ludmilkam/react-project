@@ -24,7 +24,7 @@ a{
 .allPostsText{
     display: flex;
     color: #DDB093;
-    font-size: 20;
+    font-size: 20px;
     font-weight:bold; 
 
 }
@@ -36,7 +36,7 @@ a{
 .recomendationsText{
     display: flex;
     color: #DDB093;
-    font-size: 20;
+    font-size: 20px;
     font-weight:bold;
 }
 
@@ -49,7 +49,7 @@ a{
 .yourPostsText{
     display: flex;
     color: #DDB093;
-    font-size: 20;
+    font-size: 20px;
     font-weight:bold;
 }
 
@@ -60,11 +60,11 @@ a{
 .likedText{
     display: flex;
     color: #DDB093;
-    font-size: 20;
+    font-size: 20px;
     font-weight:bold;
 }
 
-.yourProfil{
+.yourProfile{
     background-color: #EDB7B7;
     border-radius: 10px;
     border: none;
@@ -73,9 +73,9 @@ a{
     display: flex;
     align-items: flex-start;
 }
-.yourProfilText{
+.yourProfileText{
     color: #A8673B;
-    font-size: 20;
+    font-size: 20px;
     font-weight:bold;
     display: flex;
     align-items: flex-start;

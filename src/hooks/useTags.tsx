@@ -3,19 +3,19 @@ import { ICategory } from "../types/interfaces"
 
 
 
-export function useCategories(){
-    const [categories, setCategories] = useState<ICategory[]>([])
+export function useTags(){
+    const [tags, setTags] = useState<ICategory[]>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
     useEffect(() => {
-        async function fetchCategories(){
+        async function fetchtags(){
             try {
                 setLoading(true)
                 const response = await fetch("http://127.0.0.1:8000/api/tag/all")
                 const result = await response.json()
                 if (result.status === "ok"){
-                    setCategories(result.data)
+                    setTags(result.data)
                 } else {
                     setError(result.message)
                 }
@@ -29,8 +29,8 @@ export function useCategories(){
                 setLoading(false)
             }
         }
-        fetchCategories()
+        fetchtags()
         
     }, [])
-    return {categories: categories, loading: loading, error: error}
+    return {tags: tags, loading: loading, error: error}
 }

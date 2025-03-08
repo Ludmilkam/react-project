@@ -31,12 +31,12 @@ export interface ICategory {
     name: string;
 }
 
-export interface ILogin {
+export interface ILoginForm {
     email: string;
     password: string;
 }
 
-export interface IRegister {
+export interface IRegisterForm {
     username:string;
     email: string;
     password: string;

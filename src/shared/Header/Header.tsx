@@ -1,4 +1,4 @@
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import { SearchBar } from "../SearchBar/SearchBar";
 
@@ -32,8 +32,8 @@ export function Header() {
           </Link>
         </button>
         <Link to="/login">
-        <button className="yourProfil">
-          <p className="yourProfilText">Your Profil</p>
+        <button className="yourProfile">
+          <p className="yourProfileText">Your Profile</p>
         </button>
         </Link>
       </header>

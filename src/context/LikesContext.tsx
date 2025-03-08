@@ -21,7 +21,7 @@ const initialValue: ILikesContext = {
     },
 };
 
-export const likesContext = createContext<ILikesContext>(initialValue);
+const likesContext = createContext<ILikesContext>(initialValue);
 
 export function useLikesContext() {
     return useContext(likesContext);
