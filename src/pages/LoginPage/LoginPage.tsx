@@ -10,8 +10,15 @@ export function LoginPage() {
         mode: "onSubmit",
     });
 
-    const onSubmit = (data: ILoginForm) => {
+    const onSubmit = async(data: ILoginForm) => {
         console.log(data);
+        const result = await fetch("http://localhost:8000/api/user/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		})
     };
     return (
         <div>
