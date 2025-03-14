@@ -73,12 +73,7 @@ export function PostsList() {
                     {filteredPosts.map((post) => {
                         return (
                             <Post
-                                name={post.name}
-                                description={post.description}
-                                // cover_image={post.cover_image}
-                                author={post.author}
-                                tagList={post.tag.name}
-                                id={post.id}
+                                post = {post}
                                 key={post.id}
                             ></Post>
                     

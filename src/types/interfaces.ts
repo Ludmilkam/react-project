@@ -18,7 +18,6 @@ export interface IPost {
     name: string;
     description: string;
     // cover_image: string
-    time_publicated: number;
     author: string;
     comments: [];
     tag: {id: number;
@@ -41,4 +40,5 @@ export interface IRegisterForm {
     email: string;
     password: string;
     description: string;
+    image: string;
 }

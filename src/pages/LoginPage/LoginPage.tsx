@@ -3,22 +3,16 @@ import { ILoginForm } from "../../types/interfaces";
 import "./LoginPage.css";
 import { Link } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { useUserContext } from "../../context/UserContext";
 
 export function LoginPage() {
-    useTitle("Login Page")
+    useTitle("Login Page");
     const { register, handleSubmit, formState } = useForm<ILoginForm>({
         mode: "onSubmit",
     });
-
-    const onSubmit = async(data: ILoginForm) => {
-        console.log(data);
-        const result = await fetch("http://localhost:8000/api/user/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		})
+    const { login: userLogin } = useUserContext();
+    const onSubmit = async (data: ILoginForm) => {
+        userLogin(data.email, data.password);
     };
     return (
         <div>
@@ -67,9 +61,12 @@ export function LoginPage() {
                     />
                 </label>
                 <p>{formState.errors.email?.message}</p>
+                <div className="log-div">
                     <button type="submit" className="btn-login">
                         Submit
                     </button>
+                </div>
+
                 <Link to="/register">
                     <label>register</label>
                 </Link>

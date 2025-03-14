@@ -1,7 +1,4 @@
-import { useContext, useState } from "react";
 import { useLikesContext } from "../../context/LikesContext";
-import { usePostById } from "../../hooks/usePostById";
-import { useParams } from "react-router-dom";
 import "./LikeButton.css";
 import { IPost } from "../../types/interfaces";
 

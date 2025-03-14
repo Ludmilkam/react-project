@@ -1,29 +1,26 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "./PostCard.css"
-// import { LikeButton } from "../../LikeButton/LikeButton" 
+import { LikeButton } from "../../LikeButton/LikeButton" 
+import { IPost } from "../../../types/interfaces";
 
 interface IPostProps{
-    name: string,
-    description: string,
-    // cover_image: string,
-    author: string,
-    tagList: string,
-    id: number
+    post: IPost
 }
 
 export function Post(props: IPostProps){
+    const {post} = props
    
     return(
         <div>
             <div className="post">
                 {/* <img className="image" src={props.cover_image} alt={`${props.description} photo's`} /> */}
-                <h1 className="title">{props.name}</h1>
-                <p className="author">{props.author}</p>
-                <p className="description">Description: {props.description}</p>
-                {/* <LikeButton post={}/> */}
-                <p className="category">Tags: {props.tagList}</p>
+                <h1 className="title">{post.name}</h1>
+                <p className="author">{post.author}</p>
+                <p className="description">Description: {post.description}</p>
+                <LikeButton post={post}/>
+                <p className="category">Tags: {post.tag.name}</p>
                 <h3>comments</h3>
-                <Link to={`/post/${props.id}`}><h5>Перейти к посту</h5></Link>
+                <Link to={`/post/${post.id}`}><h5>Перейти к посту</h5></Link>
             </div>
         </div>
     )

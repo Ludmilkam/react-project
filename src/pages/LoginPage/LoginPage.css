@@ -16,12 +16,17 @@
     
 }
 
+.log-div{
+    display: flex;
+    justify-content: center;
+}
 .btn-login{
+    display: flex;
     background-color: rgb(255, 221, 127);
     width: 40%;
     border: none;
     border-radius: 20px;
-    margin-left: 135px;
+    /* margin-left: 135px; */
     justify-content: center;
     font-size: large;
     

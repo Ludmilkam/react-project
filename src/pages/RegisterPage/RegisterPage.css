@@ -16,14 +16,20 @@
     
 }
 
+.reg-div{
+    display: flex;
+    justify-content: center;
+}
+
 .btn-register{
     background-color: rgb(255, 221, 127);
+    display: flex;
     width: 40%;
     border: none;
     border-radius: 20px;
-    margin-left: 135px;
+    /* margin-left: 135px; */
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
     font-size: large;
 }
 .register-input{

@@ -3,23 +3,17 @@ import { IRegisterForm } from "../../types/interfaces";
 import "./RegisterPage.css";
 import { Link } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { useUserContext } from "../../context/UserContext";
 
 export function RegisterPage() {
-    useTitle("Register Page")
-    const { register, handleSubmit, formState} =
-        useForm<IRegisterForm>({
-            mode: "onSubmit",
-        });
+    useTitle("Register Page");
+    const { register, handleSubmit, formState } = useForm<IRegisterForm>({
+        mode: "onSubmit",
+    });
+    const { register: userRegister } = useUserContext();
 
-    const onSubmit = async(data: IRegisterForm) => {
-        console.log(data);
-        const result = await fetch("http://localhost:8000/api/user/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		})
+    const onSubmit = async (data: IRegisterForm) => {
+        userRegister(data.username, data.email, data.password, data.image);
     };
     return (
         <div>
@@ -50,7 +44,7 @@ export function RegisterPage() {
                     Username:
                     <input
                         className="register-input"
-                        type="email"
+                        type="username"
                         {...register("username", {
                             required: {
                                 value: true,
@@ -90,9 +84,12 @@ export function RegisterPage() {
                     />
                 </label>
                 <p>{formState.errors.email?.message}</p>
+                <div className="reg-div">
                     <button type="submit" className="btn-register">
                         Submit
                     </button>
+                </div>
+
                 <Link to="/login">
                     <label>login</label>
                 </Link>

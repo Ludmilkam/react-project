@@ -1,14 +1,15 @@
-import { LikesContextProvider } from "../context/LikesContext"
-import { AppRoutes } from "../routes/Routs"
+import { LikesContextProvider } from "../context/LikesContext";
+import { UserContextProvider } from "../context/UserContext";
+import { AppRoutes } from "../routes/Routs";
 
-
-export function AppComponent(){
-
+export function AppComponent() {
     return (
-        <div>
-            <LikesContextProvider>
-                <AppRoutes></AppRoutes>
-            </LikesContextProvider>
-        </div>
-    )
+        <>
+            <UserContextProvider>
+                <LikesContextProvider>
+                    <AppRoutes></AppRoutes>
+                </LikesContextProvider>
+            </UserContextProvider>
+        </>
+    );
 }

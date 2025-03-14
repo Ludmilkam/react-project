@@ -22,10 +22,8 @@ export function usePostById(id: number | undefined) {
                 );
                 const result = await response.json();
                 if (response.status === 404) {
-                    // throw new Error("Post not found");
                     setError(result.message);
                 }
-
                 if (result.status === "ok") {
                     setPost(result.data);
                 } else {
