@@ -19,10 +19,17 @@ export interface IPost {
     description: string;
     // cover_image: string
     author: string;
-    comments: [];
+    comments: IComment[];
     tag: {id: number;
         name: string;
     };
+}
+
+export interface IComment{
+    id: number;
+    header: string;
+    body: string;
+    postId: number;
 }
 
 export interface ICategory {

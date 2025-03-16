@@ -32,6 +32,7 @@ export function PostPage() {
                 <LikeButton post={post}/>
                 <p className="category">tag: {post?.tag.name}</p>
                 <h6>{params.id}</h6>
+                
             </div>
         </div>
     );
