@@ -84,6 +84,15 @@ export function RegisterPage() {
                     />
                 </label>
                 <p>{formState.errors.email?.message}</p>
+                <label>
+                    Profile image:
+                    <input
+                        className="register-input"
+                        type="text"
+                        {...register("image", { required: true })}
+                    />
+                </label>
+                <p>{formState.errors.image?.message}</p>
                 <div className="reg-div">
                     <button type="submit" className="btn-register">
                         Submit

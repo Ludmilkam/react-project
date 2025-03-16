@@ -6,14 +6,8 @@ import {
 	useState,
 } from "react";
 import { Response } from "../types/response";
+import { IUser } from "../types/interfaces";
 
-interface IUser {
-	id: number;
-	username: string;
-	email: string;
-	role: string;
-	image: string;
-}
 
 interface IUserContext {
 	user: IUser | null;
@@ -24,12 +18,14 @@ interface IUserContext {
 		password: string,
 		image: string
 	) => void;
+    isAuthenticated: (token : string) => boolean
 }
 
 const initialValue: IUserContext = {
 	user: null,
 	login: (email, password) => {},
 	register: (username, email, password, image) => {},
+    isAuthenticated: (token) => false
 };
 
 const userContext = createContext<IUserContext>(initialValue);
@@ -45,6 +41,7 @@ interface IUserContextProvider {
 export function UserContextProvider(props: IUserContextProvider) {
 	const { children } = props;
 	const [user, setUser] = useState<IUser | null>(null);
+
 
 	async function getUser(token: string) {
 		try {
@@ -92,7 +89,7 @@ export function UserContextProvider(props: IUserContextProvider) {
 	) {
 		try {
 			const response = await fetch(
-				"http://localhost:8000/api/user/registration",
+				"http://localhost:8000/api/user/register",
 				{
 					method: "POST",
 					headers: {
@@ -123,9 +120,19 @@ export function UserContextProvider(props: IUserContextProvider) {
 		}
 		getUser(userToken);
 	}, []);
+
+    function isAuthenticated (token: string) {
+        if (token){
+            return true
+        }else{
+            return false
+        }
+    }
+
+
 	return (
 		<userContext.Provider
-			value={{ user: user, login: login, register: register }}
+			value={{ user: user, login: login, register: register, isAuthenticated: isAuthenticated }}
 		>
 			{children}
 		</userContext.Provider>
